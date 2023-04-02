@@ -1,24 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
+import HomePage from './pages/HomePage';
+import ProjectPage from './pages/ProjectPage';
+import {
+  BrowserRouter as Router,
+  Route, Routes
+} from 'react-router-dom';import ResumePage from './pages/ResumePage';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          This is the thing that has been updating...
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router basename='react-website'>
+      <Routes>
+        <Route path="/resume" element={<ResumePage/>}/>
+        <Route path="/" element={<HomePage/>}/>
+        <Route path="/project/:id" element={<ProjectPage/>}/>
+      </Routes>
+    </Router>
   );
 }
 
