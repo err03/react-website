@@ -1,16 +1,11 @@
 import React from "react";
-import coverImage from "../assets/cover-image.png";
+import coverImage from "../assets/img/cover-image.png";
 import { Link } from "react-router-dom";
 
 export class Card extends React.Component {
     constructor(props) {
       super(props)
-      this.state = {
-        title: props.title,
-        description: props.description,
-        imagesSrc: props.imagesSrc,
-        coverImageSrc: props.coverImageSrc
-      }
+      this.state = props
     }
 
     render() {
@@ -24,8 +19,8 @@ export class Card extends React.Component {
             </p>
             <Link 
               to={"/project/"+this.state.title} 
-              state={{title: this.state.title}}
-              className="ms-auto btn btn-primary" 
+              state={{infos: this.state}}
+              className="ms-auto btn btn-primary stretched-link" 
               style={{ color: "#ffffff", decorationStyle:"none" }} 
             >
               View
