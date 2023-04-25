@@ -7,7 +7,7 @@ function Project(props) {
         <h3>{props.title}</h3>
         <div className='row'>
           {props.cards.map((item, index) => (
-            <div className='col-sm-auto'>
+            <div className='col-sm-auto' key={item.title}>
                 <Card key={item.title} {...item}/>
             </div>
           ))}

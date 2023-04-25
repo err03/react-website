@@ -6,24 +6,34 @@ import ResumeCard from '../components/ResumeCard'
 const ResumePage = () => {
 const [resumes, setResumes] = useState([
   {
+    version:"5.1",
+    pdfSrc: require('../assets/resumes/v5.1.pdf'),
+    imgSrc: require('../assets/resumes/v5.1.png'),
+  },
+  {
     version:"5",
-    imgSrc: "",
+    pdfSrc: require('../assets/resumes/v5.pdf'),
+    imgSrc: require('../assets/resumes/v5.png'),
   },
   {
     version:"4",
-    imgSrc: "",
+    pdfSrc: require('../assets/resumes/v4.pdf'),
+    imgSrc: require('../assets/resumes/v4.png'),
   },
   {
     version:"3",
-    imgSrc: "",
+    pdfSrc: require('../assets/resumes/v3.pdf'),
+    imgSrc: require('../assets/resumes/v3.png'),
   },
   {
     version:"2",
-    imgSrc: "",
+    pdfSrc: require('../assets/resumes/v2.pdf'),
+    imgSrc: require('../assets/resumes/v2.png'),
   },
   {
     version:"1",
-    imgSrc: "",
+    pdfSrc: require('../assets/resumes/v1.pdf'),
+    imgSrc: require('../assets/resumes/v1.png'),
   },
 ])
 
@@ -51,7 +61,7 @@ const [resumes, setResumes] = useState([
           tabIndex="0"
         >
           {resumes.map( (item, index) => (
-              <ResumeCard key={index} id={"resume" + item.version}/>
+              <ResumeCard key={index} id={"resume" + item.version} props={item}/>
           ))}
         </div>
         <Footer />
